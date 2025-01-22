@@ -4,4 +4,4 @@ from .constructpy import Constructability, Standardization, Simplicity, Accessib
 
 __author__ = """Christian Jesus"""
 __email__ = "christianjesusrj@gmail.com"
-__version__ = "0.0.6"
+__version__ = "0.0.7"

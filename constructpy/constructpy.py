@@ -1,5 +1,6 @@
 import csv
 import logging
+from pathlib import Path
 
 import ifcopenshell
 import ifcopenshell.util.element
@@ -459,7 +460,8 @@ class Accessibility(Constructability):
         site_coordinates = (site_lat, site_lng)
 
         cities = []
-        with open("construcpy/worldcities.csv") as file:
+        world_cities_csv = Path(__file__).with_name("worldcities.csv")
+        with world_cities_csv.open("r") as file:
             main_cities = csv.DictReader(file)
             for row in main_cities:
                 cities.append(

@@ -200,11 +200,11 @@ class Standardization(Constructability):
     ) -> None:
   
         self.structural_types_score: float | None = (
-            self.structural_types_standartization(super().ifc4_check(ifc_obj))
+            self.structural_types_standartization(super().ifc_obj)
         )
         self.structural_types_weight: float = structural_types_weight
         self.floor2floor_height_score: float | None = (
-            self.floor2floor_height_standardization(super().ifc4_check(ifc_obj))
+            self.floor2floor_height_standardization(super().ifc_obj)
         )
         self.floor2floor_height_weight: float = floor2floor_height_weight
         self.standardization_score: float | None = self.calculate_score(
@@ -291,14 +291,14 @@ class Simplicity(Constructability):
         pcast_weight: float = 1.0,
     ) -> None:
 
-        self.basement_score = self.basement_simplicity(super().ifc4_check(ifc_obj))
+        self.basement_score = self.basement_simplicity(ifc_obj)
         self.basement_weight = basement_weight
         self.length_score, self.valid_beams = self.length_of_beams_simplicity(
-            super().ifc4_check(ifc_obj)
+            ifc_obj
         )
         self.length_weight: float = length_weight
         self.pcast_score: float | None = self.precast_simplicity(
-            super().ifc4_check(ifc_obj)
+            ifc_obj
         )
         self.pcast_weight: float = pcast_weight
         self.simplicity_score: float | None = self.calculate_score(
@@ -408,11 +408,11 @@ class Accessibility(Constructability):
     ) -> None:
         
         self.area_score: float | None = self.built_area_accessibility(
-            super().ifc4_check(ifc_obj)
+            ifc_obj
         )
         self.area_weight: float = area_weight
         self.location_score, self.location_city = self.location_accessibility(
-            super().ifc4_check(ifc_obj)
+            ifc_obj
         )
         self.location_weight: float = location_weight
         self.accessibility_score: float | None = self.calculate_score(

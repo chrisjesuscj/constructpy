@@ -459,7 +459,7 @@ class Accessibility(Constructability):
         site_coordinates = (site_lat, site_lng)
 
         cities = []
-        with open("worldcities.csv") as file:
+        with open(".worldcities.csv") as file:
             main_cities = csv.DictReader(file)
             for row in main_cities:
                 cities.append(

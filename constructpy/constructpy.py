@@ -181,7 +181,7 @@ class Constructability:
 
 class Standardization(Constructability):
     """Holds all methods related to standardization assessment along with
-    its respective scores and weights 
+    its respective scores and weights
 
     :param ifc_obj: An IFC file object
     :type ifc_obj: ifcopenshell.file
@@ -192,13 +192,14 @@ class Standardization(Constructability):
         in the floor2floor height standardization method, defaults to 1.0
     :type floor2floor_height_weight: float, optional
     """
+
     def __init__(
         self,
         ifc_obj: ifcopenshell.file,
         structural_types_weight: float = 1.0,
         floor2floor_height_weight: float = 1.0,
     ) -> None:
-  
+
         self.structural_types_score: float | None = (
             self.structural_types_standartization(ifc_obj)
         )
@@ -269,7 +270,7 @@ class Standardization(Constructability):
 
 class Simplicity(Constructability):
     """Holds all methods related to simplicity assessment along with
-    its respective scores and weights 
+    its respective scores and weights
 
     :param ifc_obj: An IFC file object
     :type ifc_obj: ifcopenshell.file
@@ -283,6 +284,7 @@ class Simplicity(Constructability):
         method, defaults to 1.0
     :type pcast_weight: float, optional
     """
+
     def __init__(
         self,
         ifc_obj: ifcopenshell.file,
@@ -293,13 +295,9 @@ class Simplicity(Constructability):
 
         self.basement_score = self.basement_simplicity(ifc_obj)
         self.basement_weight = basement_weight
-        self.length_score, self.valid_beams = self.length_of_beams_simplicity(
-            ifc_obj
-        )
+        self.length_score, self.valid_beams = self.length_of_beams_simplicity(ifc_obj)
         self.length_weight: float = length_weight
-        self.pcast_score: float | None = self.precast_simplicity(
-            ifc_obj
-        )
+        self.pcast_score: float | None = self.precast_simplicity(ifc_obj)
         self.pcast_weight: float = pcast_weight
         self.simplicity_score: float | None = self.calculate_score(
             [
@@ -389,7 +387,7 @@ class Simplicity(Constructability):
 
 class Accessibility(Constructability):
     """Holds all methods related to accessibility assessment along with
-    its respective scores and weights 
+    its respective scores and weights
 
     :param ifc_obj: An IFC file object
     :type ifc_obj: ifcopenshell.file
@@ -400,20 +398,17 @@ class Accessibility(Constructability):
         location accessibility method, defaults to 1.0
     :type location_weight: float, optional
     """
+
     def __init__(
         self,
         ifc_obj: ifcopenshell.file,
         area_weight: float = 1.0,
         location_weight: float = 1.0,
     ) -> None:
-        
-        self.area_score: float | None = self.built_area_accessibility(
-            ifc_obj
-        )
+
+        self.area_score: float | None = self.built_area_accessibility(ifc_obj)
         self.area_weight: float = area_weight
-        self.location_score, self.location_city = self.location_accessibility(
-            ifc_obj
-        )
+        self.location_score, self.location_city = self.location_accessibility(ifc_obj)
         self.location_weight: float = location_weight
         self.accessibility_score: float | None = self.calculate_score(
             [
@@ -439,7 +434,7 @@ class Accessibility(Constructability):
                 return None
             buildings_areas.append(area)
 
-        site = ifc.by_type("IfcSite")
+        site = ifc.by_type("IfcSite")[0]
         try:
             site_area = ifcopenshell.util.element.get_psets(site)["Pset_SiteCommon"][
                 "TotalArea"

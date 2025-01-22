@@ -4,9 +4,9 @@ version = "0.0.1"
 dynamic = [
     "dependencies",
 ]
-description = "A constructability assessment automation library for BIM based on IFC"
+description = " An IFC based constructability assessment automation library for BIM "
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 keywords = [
     "constructpy",
 ]

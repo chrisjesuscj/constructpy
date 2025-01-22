@@ -9,7 +9,7 @@ import geopy.distance
 class Constructability:
     """Main class for constructability assessment, holds all properties
     needed for a full assessment along with a few helper methods used in
-    the child classes, this class instanciates all child classes
+    the child classes, this class instantiates all child classes
 
     :param ifc_obj: An IFC file object
     :type ifc_obj: ifcopenshell.file
@@ -31,8 +31,8 @@ class Constructability:
     :param basement_weight: The basement weight value for use in the
         basement simplicity method, defaults to 1.0
     :type basement_weight: float, optional
-    :param length_weight: The lenght of beams weight value for use in the
-        lenght of beams simplicity method, defaults to 1.0
+    :param length_weight: The length of beams weight value for use in the
+        length of beams simplicity method, defaults to 1.0
     :type length_weight: float, optional
     :param pcast_weight: The pcast weight value for use in the precast
         method, defaults to 1.0
@@ -91,7 +91,7 @@ class Constructability:
         :param ifc_obj: An IFC file object
         :type ifc_obj: ifcopenshell.file
         :raises Exception: Not valid IFC schema
-        :return: The same inputed IFC file object
+        :return: The same inputted IFC file object
         :rtype: ifcopenshell.file
         """
 
@@ -277,8 +277,8 @@ class Simplicity(Constructability):
     :param basement_weight: The basement weight value for use in the
         basement simplicity method, defaults to 1.0
     :type basement_weight: float, optional
-    :param length_weight: The lenght of beams weight value for use in the
-        lenght of beams simplicity method, defaults to 1.0
+    :param length_weight: The length of beams weight value for use in the
+        length of beams simplicity method, defaults to 1.0
     :type length_weight: float, optional
     :param pcast_weight: The pcast weight value for use in the precast
         method, defaults to 1.0

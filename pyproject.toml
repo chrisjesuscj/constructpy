@@ -6,7 +6,7 @@ dynamic = [
 ]
 description = " An IFC based constructability assessment automation library for BIM "
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.8"
 keywords = [
     "constructpy",
 ]

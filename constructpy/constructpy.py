@@ -200,11 +200,11 @@ class Standardization(Constructability):
     ) -> None:
   
         self.structural_types_score: float | None = (
-            self.structural_types_standartization(super().ifc_obj)
+            self.structural_types_standartization(ifc_obj)
         )
         self.structural_types_weight: float = structural_types_weight
         self.floor2floor_height_score: float | None = (
-            self.floor2floor_height_standardization(super().ifc_obj)
+            self.floor2floor_height_standardization(ifc_obj)
         )
         self.floor2floor_height_weight: float = floor2floor_height_weight
         self.standardization_score: float | None = self.calculate_score(
@@ -464,7 +464,7 @@ class Accessibility(Constructability):
         site_coordinates = (site_lat, site_lng)
 
         cities = []
-        with open("assets/worldcities.csv") as file:
+        with open("worldcities.csv") as file:
             main_cities = csv.DictReader(file)
             for row in main_cities:
                 cities.append(

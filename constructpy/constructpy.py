@@ -444,7 +444,7 @@ class Accessibility(Constructability):
             logging.warning("TotalArea property not found")
             return None
 
-        return sum(buildings_areas) / site_area
+        return 1 - (sum(buildings_areas) / site_area)
 
     def location_accessibility(
         self, ifc: ifcopenshell.file

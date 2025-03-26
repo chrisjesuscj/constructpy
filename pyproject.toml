@@ -34,7 +34,9 @@ all = [
 ]
 
 extra = [
-    "pandas",
+    "jupyter",
+    "matplotlib",
+    "k3d",
 ]
 
 

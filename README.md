@@ -8,7 +8,7 @@ Constructpy is a python library that performs constructability assessment tests 
 
 ## Features
 
-Constructpy currently features 7 constructability tests divided into 3 categories (standardization, simplicity and accessibility). The tests are based similar constructability assessment suite provided by the ECOS Revit plugin, described in Barros[1], but also takes into account some constructability assessment methods described in Tauriainen et al[2]. A short description of each test is provided below.
+Constructpy currently features 7 constructability tests divided into 3 categories (standardization, simplicity and accessibility). The tests are based on similar constructability assessment suite provided by the ECOS Revit plugin, described in Barros[1], but also takes into account some constructability assessment methods described in Tauriainen et al[2]. A short description of each test is provided below.
 
 ### Standardization
 
@@ -26,7 +26,7 @@ Constructpy currently features 7 constructability tests divided into 3 categorie
 - **Built area**: Checks the ratio of the footprint area and total available area in the site;
 - **Location**: Checks the distance of the construction site and the nearest major city according to a provided database.
 
-All tests query the IFC database and return a score between 0 and 1 where 0 is the minimum constructability score and 1 the maximum. The IFC objects queried and the specific test criteria are described in depth in the [documentation](https://chrisjesuscj.github.io/constructpy).
+All tests query the IFC database and return a score between 0 and 1 where 0 is the minimum constructability score and 1 the maximum. The IFC objects queried and the specific test criteria are described in depth in the [documentation](https://chrisjesuscj.github.io/constructpy) (WIP).
 
 ## Installation
 
@@ -69,7 +69,7 @@ simplicity_score = con.simplity_score
 accessibility_score = con.accessibility_score
 ```
 
-Aside from the general constructability score and the score for each category as shown in the snippet above, it is also possible to access the individual tests scores, which can also have individual weights set. For more in depth information on the library objects refer to the [documentation](https://chrisjesuscj.github.io/constructpy). A jupyter notebook is also provided in the examples folder and showcases a basic usage of the library.
+Aside from the general constructability score and the score for each category as shown in the snippet above, it is also possible to access the individual tests scores, which can also have individual weights set. For more in depth information on the library objects refer to the [documentation](https://chrisjesuscj.github.io/constructpy)(WIP). A jupyter notebook is also provided in the examples folder and showcases a basic usage of the library.
 
 ## License
 
